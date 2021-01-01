@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "lib": ["es6", "es2017.string", "dom"],
+    "declaration": true,
+    "outDir": "./lib",
+    "strict": true,
+    "moduleResolution": "node",
+    "types": ["jest"]
+  },
+  "include": ["src", "jest.config.js"],
+  "exclude": ["node_modules"]
+}

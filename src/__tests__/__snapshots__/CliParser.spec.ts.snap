@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CliParser testParse: parserTarget 1`] = `
+Arg1 {
+  "numParam": 10,
+  "optInt": 100,
+  "point": Object {
+    "name": "n1",
+    "x": 1,
+    "y": 2,
+  },
+  "strParam": "abc",
+}
+`;
+
+exports[`CliParser testParse: printUsage 1`] = `
+"NAME: TestArg1
+SUMMARY: This is a test arg1
+DESCRIPTION
+  Description of test Args
+USAGE
+  TestArg1 [-i <value>] <strParam> <numParam> [point]
+EXAMPLES
+  arg1 2
+  arg1 4
+ARGUMENTS / OPTIONS
+  <strParam>:   Str parameter    
+  <numParam>:   number parameter 
+  <point>:      number parameter 
+  -i, --optInt:                  
+"
+`;
+
+exports[`CliParser testParse: spec 1`] = `
+CLISpec {
+  "cls": [Function],
+  "defVal": Arg1 {
+    "optInt": 10,
+  },
+  "description": "Description of test Args",
+  "examples": Array [
+    "arg1 2",
+    "arg1 4",
+  ],
+  "firstOptionalIndex": 2,
+  "indexedParams": Array [
+    Param {
+      "cls": [Function],
+      "defVal": undefined,
+      "description": "Str parameter",
+      "index": 0,
+      "key": "strParam",
+      "name": "strParam",
+      "type": [Function],
+    },
+    Param {
+      "cls": [Function],
+      "defVal": undefined,
+      "description": "number parameter",
+      "index": 1,
+      "key": "numParam",
+      "name": "numParam",
+      "type": [Function],
+    },
+    Param {
+      "cls": [Function],
+      "defVal": undefined,
+      "description": "number parameter",
+      "index": 2,
+      "key": "point",
+      "name": "point",
+      "required": false,
+      "type": [Function],
+    },
+  ],
+  "name": "TestArg1",
+  "optionParams": Array [
+    Param {
+      "cls": [Function],
+      "defVal": 10,
+      "key": "optInt",
+      "name": "optInt",
+      "shortName": "i",
+      "type": [Function],
+    },
+  ],
+  "requiredParams": Set {
+    "strParam",
+    "numParam",
+  },
+  "summary": "This is a test arg1",
+}
+`;
+
+exports[`CliParser testParse: usage 1`] = `"TestArg1 [-i <value>] <strParam> <numParam> [point]"`;

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextFormatter testAlignTabs 1`] = `
+"ab cdef   ghijk 
+a  bcdefg h     
+a  b      cde   fg h 
+
+"
+`;
+
+exports[`TextFormatter testIndent 1`] = `
+"  abcd
+  efg
+  hijk
+  lmn
+  "
+`;

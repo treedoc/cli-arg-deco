@@ -1,0 +1,1 @@
+export function noNull(s? : string) { return !s ? '' : s; }
