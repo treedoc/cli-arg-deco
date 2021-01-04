@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TextFormatter testAlignTabs 1`] = `
-"ab cdef   ghijk 
-a  bcdefg h     
-a  b      cde   fg h 
+"ab cdef   ghijk
+a  bcdefg h
+a  b      cde   fg h
 
 "
 `;

@@ -1,7 +1,7 @@
 {
   "name": "cli-arg-deco",
   "version": "0.0.1",
-  "description": "JSONex TreeDoc Json Parser",
+  "description": "A typescript decorator based simple meta data driven CLI argument parser.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -17,10 +17,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/treedoc/CliArg_ts.git"
+    "url": "git+https://github.com/treedoc/cli-arg-deco.git"
   },
   "bugs": {
-    "url": "https://github.com/treedoc/CliArg_ts/issues"
+    "url": "https://github.com/treedoc/cli-arg-deco/issues"
   },
   "keywords": [
     "CLI",
@@ -29,7 +29,7 @@
   ],
   "author": "Jianwu Chen",
   "license": "MIT",
-  "homepage": "https://github.com/treedoc/CliArg_ts/#readme",
+  "homepage": "https://github.com/treedoc/cli-arg-deco/#readme",
   "devDependencies": {
     "@types/jest": "^26.0.15",
     "codecov": "^3.6.1",

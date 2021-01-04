@@ -82,6 +82,8 @@ export default class CLIParser<T> {
   private parseValue(param: Param, val: string)  {
     const cls = param.type;
     try {
+      if (param.decoder)
+        return param.decoder(val);
       if (cls === Boolean) 
         return val === 'true';
       if (cls === Number)

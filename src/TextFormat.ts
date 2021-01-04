@@ -21,7 +21,7 @@ export default class TextFormatter {
       if (lines[i].length > 0) {
         const line = fields[i];
         for (let c = 0; c < line.length; c++) 
-          sb += line[c].padEnd(columnsSize[c] + 1);
+          sb += c == line.length-1 ? line[c] : line[c].padEnd(columnsSize[c] + 1);
       }
       sb += "\n";
     }

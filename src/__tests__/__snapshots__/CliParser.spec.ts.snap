@@ -3,6 +3,7 @@
 exports[`CliParser testParse: parserTarget 1`] = `
 Arg1 {
   "numParam": 10,
+  "opt": 1,
   "optInt": 100,
   "point": Object {
     "name": "n1",
@@ -19,15 +20,16 @@ SUMMARY: This is a test arg1
 DESCRIPTION
   Description of test Args
 USAGE
-  TestArg1 [-i <value>] <strParam> <numParam> [point]
+  TestArg1 -o <value> [-i <value>] <strParam> <numParam> [point]
 EXAMPLES
   arg1 2
   arg1 4
 ARGUMENTS / OPTIONS
-  <strParam>:   Str parameter    
-  <numParam>:   number parameter 
-  <point>:      number parameter 
-  -i, --optInt:                  
+  <strParam>:   Str parameter
+  <numParam>:   number parameter
+  <point>:      Object Point
+  -o, --opt:    Opt: possibleValues:[VAL1,VAL2]
+  -i, --optInt: 
 "
 `;
 
@@ -35,6 +37,7 @@ exports[`CliParser testParse: spec 1`] = `
 CLISpec {
   "cls": [Function],
   "defVal": Arg1 {
+    "opt": 0,
     "optInt": 10,
   },
   "description": "Description of test Args",
@@ -65,7 +68,7 @@ CLISpec {
     Param {
       "cls": [Function],
       "defVal": undefined,
-      "description": "number parameter",
+      "description": "Object Point",
       "index": 2,
       "key": "point",
       "name": "point",
@@ -75,6 +78,17 @@ CLISpec {
   ],
   "name": "TestArg1",
   "optionParams": Array [
+    Param {
+      "cls": [Function],
+      "decoder": [Function],
+      "defVal": 0,
+      "description": "Opt: possibleValues:[VAL1,VAL2]",
+      "key": "opt",
+      "name": "opt",
+      "required": true,
+      "shortName": "o",
+      "type": [Function],
+    },
     Param {
       "cls": [Function],
       "defVal": 10,
@@ -87,9 +101,10 @@ CLISpec {
   "requiredParams": Set {
     "strParam",
     "numParam",
+    "opt",
   },
   "summary": "This is a test arg1",
 }
 `;
 
-exports[`CliParser testParse: usage 1`] = `"TestArg1 [-i <value>] <strParam> <numParam> [point]"`;
+exports[`CliParser testParse: usage 1`] = `"TestArg1 -o <value> [-i <value>] <strParam> <numParam> [point]"`;

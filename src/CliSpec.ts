@@ -15,7 +15,7 @@ import "reflect-metadata"
 import CliDeco from "./CliDeco";
 import CLIParser from "./CliParser";
 import Assert from "./core/Assert";
-import { AnyFunction, doIfNotNull } from "./core/LangUtil";
+import { Constructor, doIfNotNull } from "./core/LangUtil";
 
 import Param from "./Param";
 import TextFormatter from "./TextFormat";
@@ -38,7 +38,7 @@ export default class CLISpec<T> {
   }
 
   init() {
-    this.name = (this.cls as AnyFunction).name;
+    this.name = (this.cls as Constructor).name;
     doIfNotNull(CliDeco.getName(this.cls!), a => this.name = a!);
     doIfNotNull(CliDeco.getDescription(this.cls!), a => this.description = a);
     doIfNotNull(CliDeco.getSummary(this.cls!), a => this.summary = a);
@@ -57,6 +57,10 @@ export default class CLISpec<T> {
         }
       } else
         this.optionParams.push(param);
+    }
+    for (let i = 0; i < this.indexedParams.length; i++) {
+      Assert.isTrue(this.indexedParams[i] !== undefined,
+        `Indexed argument has to start from 0 and be continuos, missing defination at index: ${i}`);
     }
   }
 

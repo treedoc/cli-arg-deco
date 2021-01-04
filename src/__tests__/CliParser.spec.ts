@@ -1,8 +1,9 @@
 import CliDeco from "../CliDeco"
 import CLISpec from "../CliSpec";
+import { EnumsValueOf, EnumValues } from "../core/LangUtil";
 
 
-const { Name, Summary, Description, Examples, Index, ShortName, Required } = CliDeco;
+const { Name, Summary, Description, Examples, Index, ShortName, Required, Decoder } = CliDeco;
 
 class Point {
   name?: string;
@@ -26,12 +27,12 @@ class Arg1 {
   @Index(1) @Description("number parameter")
   numParam?: number;
 
-  @Index(2) @Description("number parameter") @Required(false)
+  @Index(2) @Description("Object Point") @Required(false)
   point?: Point;
 
   // TODO: Add enum support, Typescript metadata information of `design:type` will set as `object` for enum which is not correct
-  // @ShortName("o") @Description( "Opt") @Required(true)
-  // opt = Opt.VAL1;
+  @ShortName("o") @Description( `Opt: possibleValues:[${EnumValues(Opt)}]`) @Required(true) @Decoder(_ => EnumsValueOf(Opt, _))
+  opt = Opt.VAL1;
 
   @ShortName("i")
   optInt: number = 10;

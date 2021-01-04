@@ -32,6 +32,7 @@ export default class Param {
   description?: string;
   defVal?: any;
   required?: boolean;
+  decoder?: (s: string) => any;
   
   public constructor(public key: string, public cls: any, defObj: any) {
     this.name = key;
@@ -42,7 +43,11 @@ export default class Param {
     doIfNotNull(CliDeco.getDescription(cls, key), a => this.description = a);
     doIfNotNull(CliDeco.getIndex(cls, key), a => this.index = a);
     doIfNotNull(CliDeco.getRequired(cls, key), a => this.required = a);
+    doIfNotNull(CliDeco.getDecoder(cls, key), a => this.decoder = a);
     doIfNotNull(CliDeco.getDesignType(cls, key), a => this.type = a);
+    if (this.type === Object && this.defVal !== undefined && this.defVal !== null) {
+      this.type = this.defVal.__proto__.constructor;
+    }
   }
 
   public get isRequired() : boolean {
