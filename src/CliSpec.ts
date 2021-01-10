@@ -46,7 +46,8 @@ export default class CLISpec<T> {
 
     for(const key of Array.from(CliDeco.getFieldsMetadata(this.cls).keys())) {
       const param = new Param(key, this.cls, this.defVal);
-      if(param.isRequired) this.requiredParams.add(param.name);
+      if(param.isRequired) 
+        this.requiredParams.add(param.name);
       if (param.index !== undefined) {
         this.indexedParams[param.index] = param;
         if (!param.isRequired)

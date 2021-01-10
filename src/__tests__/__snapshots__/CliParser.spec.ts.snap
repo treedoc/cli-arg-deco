@@ -2,6 +2,7 @@
 
 exports[`CliParser testParse: parserTarget 1`] = `
 Arg1 {
+  "noShortName": 0,
   "numParam": 10,
   "opt": 1,
   "optInt": 100,
@@ -19,16 +20,17 @@ exports[`CliParser testParse: printUsage 1`] = `
 DESCRIPTION
   Description of test Args
 USAGE
-  TestArg1 -o {opt} [-i {optInt}] <strParam> <numParam> [point]
+  TestArg1 -o {opt} [-i {optInt}] [--noShortName {noShortName}] <strParam> <numParam> [point]
 EXAMPLES
   arg1 2
   arg1 4
 ARGUMENTS / OPTIONS
-  <strParam>:   Str parameter
-  <numParam>:   number parameter
-  <point>:      Object Point
-  -o, --opt:    Opt: possibleValues:[VAL1,VAL2]
-  -i, --optInt: 
+  <strParam>:        Str parameter
+  <numParam>:        number parameter
+  <point>:           Object Point
+  -o, --opt:         Opt: possibleValues:[VAL1,VAL2]
+  -i, --optInt:      
+      --noShortName: 
 "
 `;
 
@@ -36,6 +38,7 @@ exports[`CliParser testParse: spec 1`] = `
 CLISpec {
   "cls": [Function],
   "defVal": Arg1 {
+    "noShortName": 0,
     "opt": 0,
     "optInt": 10,
   },
@@ -96,6 +99,13 @@ CLISpec {
       "shortName": "i",
       "type": [Function],
     },
+    Param {
+      "cls": [Function],
+      "defVal": 0,
+      "key": "noShortName",
+      "name": "noShortName",
+      "type": [Function],
+    },
   ],
   "requiredParams": Set {
     "strParam",
@@ -106,4 +116,4 @@ CLISpec {
 }
 `;
 
-exports[`CliParser testParse: usage 1`] = `"TestArg1 -o {opt} [-i {optInt}] <strParam> <numParam> [point]"`;
+exports[`CliParser testParse: usage 1`] = `"TestArg1 -o {opt} [-i {optInt}] [--noShortName {noShortName}] <strParam> <numParam> [point]"`;

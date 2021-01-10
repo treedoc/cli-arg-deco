@@ -71,7 +71,7 @@ export default class Param {
   getDescriptionLine(): string {
     let sb = "";
     if (this.index == null) {
-      if (this.shortName) sb += `-${this.shortName}, `;
+      sb += this.shortName ? `-${this.shortName}, ` : '    ';
       sb += `--${this.name}`;
     } else {
       sb += `<${this.name}>`;

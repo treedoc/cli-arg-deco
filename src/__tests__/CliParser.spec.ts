@@ -35,7 +35,10 @@ class Arg1 {
   opt = Opt.VAL1;
 
   @ShortName("i")
-  optInt: number = 10;
+  optInt = 10;
+
+  @Name("noShortName")
+  noShortName = 0;
 }
 
 
