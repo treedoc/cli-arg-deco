@@ -63,7 +63,7 @@ export default class Param {
       return this.isRequired ? ` <${this.name}>` :  ` [${this.name}]`;
 
     let sb = this.shortName != null ? `-${this.shortName}` : `--${this.name}`;
-    doIf(!this.isBooleanType, () => sb += " <value>");
+    doIf(!this.isBooleanType, () => sb += ` {${this.name}}`);
 
     return this.isRequired ? ` ${sb}` : ` [${sb}]`;
   }

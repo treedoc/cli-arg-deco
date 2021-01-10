@@ -60,7 +60,7 @@ export default class CLISpec<T> {
     }
     for (let i = 0; i < this.indexedParams.length; i++) {
       Assert.isTrue(this.indexedParams[i] !== undefined,
-        `Indexed argument has to start from 0 and be continuos, missing defination at index: ${i}`);
+        `Indexed argument has to start from 0 and be continuous, missing definition at index: ${i}`);
     }
   }
 
@@ -70,7 +70,7 @@ export default class CLISpec<T> {
 
   printUsage(): string {
     let sb = `NAME: ${this.name}`;
-    doIfNotNull(this.summary, s => sb += `\nSUMMARY: ${s}`);
+    doIfNotNull(this.summary, s => sb += ` - ${s}`);
     doIfNotNull(this.description, s=> sb += `\nDESCRIPTION\n  ${s}`);
     sb += `\nUSAGE\n  ${this.usage}`;
     if (this.examples != null && this.examples.length > 0) {

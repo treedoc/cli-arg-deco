@@ -15,12 +15,11 @@ Arg1 {
 `;
 
 exports[`CliParser testParse: printUsage 1`] = `
-"NAME: TestArg1
-SUMMARY: This is a test arg1
+"NAME: TestArg1 - This is a test arg1
 DESCRIPTION
   Description of test Args
 USAGE
-  TestArg1 -o <value> [-i <value>] <strParam> <numParam> [point]
+  TestArg1 -o {opt} [-i {optInt}] <strParam> <numParam> [point]
 EXAMPLES
   arg1 2
   arg1 4
@@ -107,4 +106,4 @@ CLISpec {
 }
 `;
 
-exports[`CliParser testParse: usage 1`] = `"TestArg1 -o <value> [-i <value>] <strParam> <numParam> [point]"`;
+exports[`CliParser testParse: usage 1`] = `"TestArg1 -o {opt} [-i {optInt}] <strParam> <numParam> [point]"`;
