@@ -1,4 +1,4 @@
-<a href="https://github.com/treedoc/CliArg_ts"><img alt="GitHub Actions status" src="https://github.com/treedoc/CliArg_ts/workflows/Node%20CI/badge.svg"></a> [![codecov](https://codecov.io/gh/treedoc/CliArg_ts/branch/master/graph/badge.svg)](https://codecov.io/gh/treedoc/CliArg_ts)
+<a href="https://github.com/treedoc/cli-arg-deco"><img alt="GitHub Actions status" src="https://github.com/treedoc/cli-arg-deco/workflows/Node%20CI/badge.svg"></a> [![codecov](https://codecov.io/gh/treedoc/cli-arg-deco/branch/master/graph/badge.svg)](https://codecov.io/gh/treedoc/cli-arg-deco)
 
 # CLI-ARG-DECO
 
@@ -23,11 +23,7 @@ Using decorator (aka. Annotation) to describe CLI argument is quite popular in o
 
   ```
 
-```js
-
-
-```
-
+- Here is example on how to use it: https://github.com/treedoc/cli-arg-deco/blob/main/src/__tests__/CliParser.spec.ts
 
 ## License
 

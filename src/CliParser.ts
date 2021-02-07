@@ -94,7 +94,6 @@ export default class CLIParser<T> {
       const rootType = cls === Array ? TDNodeType.ARRAY : TDNodeType.MAP;
 
       return TDJSONParser.get().parse(val, new TDJSONParserOption().setDefaultRootType(rootType)).toObject(false);
-      // return JSON.parse(val); // TODO: use treedoc_ts to parse JSONex format.
     } catch (e) {
       console.error(`Error parsing parameter:${param.name}, type: ${param.type}, value: ${val}`, e);
     }
