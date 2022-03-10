@@ -5,7 +5,7 @@
 A typescript decorator based simple meta data driven CLI argument parser.
 
 ## Background
-Using decorator (aka. Annotation) to describe CLI argument is quite popular in other languages. But it's not available in Javascript (AFAIK). This library allow developers to describe the argument schema using the Typescript experimental feature [`decorator`](https://www.typescriptlang.org/docs/handbook/decorators.html). With this library, developer can avoid calling cumbersome APIs to retrieve parsed argument and format the usage text. The schema defined by the decorator will be the single source of truth which will be used for both parsing and print the usage text. So that developer can spend minimum time on the CLI argument concerns. 
+Using decorator (aka. Annotation) to describe CLI argument is quite popular in other languages. But it's not available in Javascript (AFAIK). This library allows developers to describe the argument schema using the Typescript experimental feature [`decorator`](https://www.typescriptlang.org/docs/handbook/decorators.html). With this library, developer can avoid calling cumbersome APIs to retrieve parsed argument and format the usage text. The schema defined by the decorator will be the single source of truth which will be used for both parsing and printing the usage text. So that developer can spend minimum time on the CLI argument concerns. 
 
 ## Usage
 ### Install & Setup
